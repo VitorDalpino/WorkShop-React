@@ -1,22 +1,47 @@
-import { useState } from "react";
 import Navbar from "./components/navbar";
-import FeaturedProperties from "./components/feactures";
-import ContactForm from "./components/contatt";
-import Footer from "./components/footer";
 import Hero from "./components/hero";
+import FeaturedProperties from "./components/featured-properties";
+import ContactForm from "./components/contact-form";
+import Footer from "./components/footer";
 
+const properties = [
+  {
+    id: 1,
+    name: "Apartamento Moderno",
+    description: "Um belo apartamento moderno no centro da cidade",
+    location: "Centro",
+    price: 250000,
+    image: "src/assets/properties/1.webp",
+    featured: true,
+  },
+  {
+    id: 2,
+    name: "Vila na Praia",
+    description: "Vila luxuosa com vista deslumbrante para o oceano",
+    location: "Área Costeira",
+    price: 750000,
+    image: "src/assets/properties/2.webp",
+    featured: true,
+  },
+  {
+    id: 3,
+    name: "Casa de Campo",
+    description: "Espaçosa casa familiar com um grande quintal",
+    location: "Interior",
+    price: 450000,
+    image: "src/assets/properties/3.webp",
+    featured: false,
+  },
+];
 
-function App() {
-
+export default function App() {
   return (
-    <div className="flex flex-col">
+    <div>
       <Navbar />
       <Hero />
-      <FeaturedProperties />
+      <FeaturedProperties properties={properties} />
       <ContactForm />
       <Footer />
     </div>
   );
 }
-
-export default App;

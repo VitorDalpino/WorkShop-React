@@ -1,3 +1,4 @@
+
 function FeaturedProperties({ properties }) {
   return (
     <section className="py-16 bg-gray-50">
@@ -6,7 +7,9 @@ function FeaturedProperties({ properties }) {
           Imóveis em Destaque
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-12">
-          {/* propriedades */}
+          {properties.map((property) => (
+            <div key={property.id}>{property.name}</div>
+          ))}
         </div>
       </div>
     </section>
